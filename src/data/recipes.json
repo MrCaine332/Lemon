@@ -1,0 +1,122 @@
+[
+  {
+    "_id": 1,
+    "title": "Bananas Foster Ice Cream Cake",
+    "description": "If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake.",
+    "cookingTime": 25,
+    "commentsNo": 5,
+    "viewsNo": 17,
+    "author": "Tessa Stone",
+    "createdAt": "2022-06-17T11:30:00.332Z",
+    "difficulty": "EASY",
+    "image": "banana-foster.png"
+  },
+  {
+    "_id": 2,
+    "title": "Deviled Eggs",
+    "description": "It's not a party without deviled eggs! This classic deviled eggs recipe is great for all kinds of gatherings, whether an Easter brunch, a summer picnic, or just because.",
+    "cookingTime": 15,
+    "commentsNo": 7,
+    "viewsNo": 92,
+    "author": "Suzanne EE",
+    "createdAt": "2022-06-17T17:00:55.765Z",
+    "difficulty": "EASY",
+    "image": "deviled-eggs.jpg"
+  },
+  {
+    "_id": 3,
+    "title": "Pesto Salmon Phyllo Parcels",
+    "description": "Pesto adds loads of flavor to these baked salmon phyllo parcels. Just three — yes, three! — main ingredients result in a sophisticated dinner that's deceptively easy to make.",
+    "cookingTime": 30,
+    "commentsNo": 12,
+    "viewsNo": 14,
+    "author": "Diana Moutsopoulos",
+    "createdAt": "2022-06-17T17:01:13.753Z",
+    "difficulty": "MEDIUM",
+    "image": "pesto-salmon.jpeg"
+  },
+  {
+    "_id": 4,
+    "title": "Greek Sheet Pan Salmon and Asparagus",
+    "description": "This Greek-inspired one-pan meal is simple to make and perfect for busy weeknights. Guests will love this too! Serve with a side of rice, if desired. I prefer to use thick center-cut pieces of salmon, as they tend to remain more moist.",
+    "cookingTime": 45,
+    "commentsNo": 4,
+    "viewsNo": 81,
+    "author": "Suzanne EE",
+    "createdAt": "2022-06-17T17:04:52.487Z",
+    "difficulty": "HARD",
+    "image": "greek-salmon.jpg"
+  },
+  {
+    "_id": 5,
+    "title": "Apple Jack Pulled Pork Buns",
+    "description": "We're using apple juice and whiskey to produce one of my favorite versions of pulled pork. Which, by the way, we're not pulling it, it's more like smashing. Speaking of smash, the name comes from the fact that this was originally made with Jack Daniels®, but you can use any whiskey you want, like I did, or not at all. This is served with a very mustardy and acidic slaw specifically made to pair with the sweet pork.",
+    "cookingTime": 145,
+    "commentsNo": 15,
+    "viewsNo": 149,
+    "author": "Olivia",
+    "createdAt": "2022-06-17T17:15:52.556Z",
+    "difficulty": "HARD",
+    "image": "apple-jack.jpg"
+  },
+  {
+    "_id": 6,
+    "title": "Pulled Pork Casserole",
+    "description": "Pulled pork is the gift that keeps on giving. This recipe uses up any leftover pulled pork and is baked in under 30 minutes.",
+    "cookingTime": 35,
+    "commentsNo": 22,
+    "viewsNo": 208,
+    "author": "Karla Harmer",
+    "createdAt": "2022-06-17T17:16:01.201Z",
+    "difficulty": "MEDIUM",
+    "image": "pork-casserole.jpg"
+  },
+  {
+    "_id": 7,
+    "title": "Balsamic Pork Chops",
+    "description": "Jazz up your weeknight pan-fried pork chops with a balsamic glaze! We like these with steamed broccoli and a crispy, fresh salad.",
+    "cookingTime": 110,
+    "commentsNo": 3,
+    "viewsNo": 2,
+    "author": "Bibi",
+    "createdAt": "2022-06-17T17:16:05.516Z",
+    "difficulty": "MEDIUM",
+    "image": "balsamic-pork.jpg"
+  },
+  {
+    "_id": 8,
+    "title": "Sheet Pan Chorizo with Potatoes and Asparagus for Two",
+    "description": "Looking for a sheet pan dinner for two? Toss chorizo sausage, potatoes, and vegetables together in a single pan for a quick and easy weeknight dinner with a baked chorizo Spanish flare.",
+    "cookingTime": 30,
+    "commentsNo": 1,
+    "viewsNo": 15,
+    "author": "Fioa",
+    "createdAt": "2022-06-17T17:16:09.818Z",
+    "difficulty": "EASY",
+    "image": "asparagus.jpg"
+  },
+  {
+    "_id": 9,
+    "title": "No-Bake Cheesecake Flag Cake",
+    "description": "That you can make this lovely, sweet treat without turning on the oven is probably enough of a reason to give this serious consideration. Besides the taste and light mousse-like texture, I think your guests will enjoy the iconic stars and stripes design provided by the fresh blueberries and strawberries. USA! USA! USA!",
+    "cookingTime": 90,
+    "commentsNo": 0,
+    "viewsNo": 22,
+    "author": "Chef Jhon",
+    "createdAt": "2022-06-17T17:16:15.444Z",
+    "difficulty": "HARD",
+    "image": "american-cake.jpg"
+  },
+  {
+    "_id": 10,
+    "title": "Oven-Roasted Asparagus",
+    "description": "Salty and savory, the roasting method kills the natural bitterness of asparagus. Try it next to grilled fish or lamb.",
+    "cookingTime": 25,
+    "commentsNo": 0,
+    "viewsNo": 43,
+    "author": "swedishmilk",
+    "createdAt": "2022-06-17T17:16:20.580Z",
+    "difficulty": "MEDIUM",
+    "image": "over-roasted.jpg"
+  }
+]

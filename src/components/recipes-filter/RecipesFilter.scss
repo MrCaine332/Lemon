@@ -1,0 +1,96 @@
+.recipe__filter-wrap {
+  input {
+    height: 35px;
+  }
+  input[type="number"] {
+    width: 75px;
+  }
+  input[type="date"] {
+    width: 130px;
+  }
+}
+
+.recipe__filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
+  width: 100%;
+  gap: 15px;
+
+  .search {
+    height: 35px;
+    width: 300px;
+  }
+
+  select {
+    width: 150px;
+    height: 35px;
+  }
+}
+
+.filter__item {
+  display: flex;
+  gap: 15px;
+  //flex-flow: row wrap;
+
+  .search {
+    width: 30%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .filter__tags {
+    width: calc(70% - 15px);
+    background-color: lightgray;
+    height: 35px;
+  }
+
+  .filter__item-col {
+    flex-grow: 1;
+  }
+
+  .filter__diff {
+    width: 30%;
+
+    select {
+      width: 100%;
+    }
+  }
+
+  .filter__time {
+    width: calc(35% - 15px);
+    div {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    input {
+      width: 100%;
+    }
+  }
+}
+
+
+.recipe__filter-btn {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .filter__item {
+    flex-direction: column;
+    .search {
+      width: 100%;
+    }
+    .filter__tags {
+      width: 100%;
+    }
+    .filter__diff {
+      width: 100%;
+    }
+    .filter__time {
+      width: 100%;
+    }
+  }
+}

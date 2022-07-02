@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //height: 500px;
+  background-color: var(--color-footer);
+
+  * {
+    font-size: 1em;
+    color: var(--color-text-footer);
+  }
+
+}

@@ -1,0 +1,80 @@
+
+.auth__form  {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 14pt;
+
+  input {
+    font-size: 14pt;
+    height: 45px;
+  }
+
+  input::placeholder {
+    font-style: italic;
+    color: var(--color-accents);
+  }
+
+  .auth__form-utilities {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12pt;
+    font-style: italic;
+
+    label {
+      display: flex;
+      gap: 5px;
+    }
+
+    input {
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  .auth__button {
+    margin: auto;
+  }
+
+  .auth__icons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 15px;
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .auth__change-form {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    * {
+      font-style: italic;
+    }
+  }
+
+  .auth__terms {
+    font-style: italic;
+    font-size: 12pt;
+    display: flex;
+    justify-content: center;
+
+    span {
+      text-decoration: underline;
+      color: #8EA2ED;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+  }
+
+}
+
+
+
+
+

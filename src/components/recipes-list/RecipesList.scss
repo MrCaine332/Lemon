@@ -1,0 +1,12 @@
+.recipes__list-wrap {
+
+}
+
+.recipes__list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: flex-start;
+  width: 100%;
+  gap: 49px;
+}
