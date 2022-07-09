@@ -1,22 +1,13 @@
 import React, {useEffect} from 'react';
 import {useAppDispatch} from "../../hooks";
+import "./Test.scss"
+import AppButton from "../general/app-button/AppButton";
 
 const TestComponent: React.FC<any> = (props) => {
 
-    const dispatch = useAppDispatch()
-
-    useEffect(() => {
-        console.log(props.auth)
-    }, [props.auth])
-
-    useEffect(() => {
-        console.log(props)
-    }, [])
-
-
     return (
-        <div>
-            <button onClick={props.authThunk}>Aboba</button>
+        <div className="box-long">
+            {/*<AppButton type="button" name="ADD INGREDIENT" />*/}
         </div>
     )
 }

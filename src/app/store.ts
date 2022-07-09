@@ -3,13 +3,15 @@ import authReducer from "./slices/auth-slice"
 import homeReducer from "./slices/home-slice"
 import recipesReducer from "./slices/recipes-slice"
 import styleReducer from "./slices/style-slice"
+import newRecipeReducer from "./slices/new-recipe-slice";
 
 const store = configureStore({
     reducer: {
         auth: authReducer,
         home: homeReducer,
         recipes: recipesReducer,
-        style: styleReducer
+        style: styleReducer,
+        newRecipe: newRecipeReducer
     }
 })
 

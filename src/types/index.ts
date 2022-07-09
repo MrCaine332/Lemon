@@ -120,3 +120,17 @@ export interface IRecipesState {
         publishedTo: string
     }
 }
+
+export interface INewRecipeSlice {
+    title: string
+    description: string
+    mainImage: any
+    ingredients: {
+      ingredientName: string
+      quantity: string
+    }[]
+    steps: {
+      stepDescription: string
+    }[]
+    moreImages: any[]
+}

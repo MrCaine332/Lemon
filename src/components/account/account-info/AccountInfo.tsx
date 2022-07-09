@@ -1,16 +1,16 @@
 import React from 'react';
 import "./AccountInfo.scss"
-import {authActions} from "../../../app/slices/auth-slice";
-import {useAppDispatch, useAppSelector} from "../../../hooks";
+import {useAppDispatch} from "../../../hooks";
 import AppButton from "../../general/app-button/AppButton";
 import {IAuthState} from "../../../types";
+import {logout} from "../../../app/services/auth-services";
 
 const AccountInfo: React.FC<{ auth: IAuthState}> = ({ auth }) => {
 
     const dispatch = useAppDispatch()
 
     const onLogout = () => {
-        dispatch(authActions.logout())
+        dispatch(logout())
     }
 
     const test = () => {
