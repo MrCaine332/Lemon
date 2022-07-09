@@ -5,6 +5,7 @@ import {IHomeState} from "../../types";
 const initialState: IHomeState = {
     sliderRecipes: [],
     newestRecipes: [],
+    searchString: "",
     featuredRecipes: {
         easyRecipes: [],
         mediumRecipes: [],
@@ -28,6 +29,9 @@ const homeSlice = createSlice({
                     mediumRecipes: action.payload.mediumRecipes,
                     hardRecipes: action.payload.hardRecipes
                 }}
+        },
+        setSearchString(state, action) {
+            state.searchString = action.payload
         }
     }
 })

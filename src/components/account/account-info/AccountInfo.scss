@@ -1,0 +1,9 @@
+.auth__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  * {
+    font-size: 14pt;
+  }
+}

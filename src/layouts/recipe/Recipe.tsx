@@ -15,7 +15,7 @@ const images: string[] = [recipe1, recipe2, recipe3]
 const Recipe: React.FC = () => {
 
     const id = useParams().id
-    const recipe = useAppSelector(state => state.recipes).recipeToDisplay
+    const recipe = useAppSelector(state => state.recipes).pageRecipe
     const dispatch = useAppDispatch()
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const Recipe: React.FC = () => {
             const recipeId = Number(id)
             dispatch(getRecipeById(recipeId))
         }
-    }, [id])
+    }, [dispatch, id])
 
     return (
         <div className="page">

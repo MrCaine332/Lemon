@@ -4,7 +4,17 @@ import {IRecipesState} from "../../types";
 
 const initialState: IRecipesState = {
     recipes: [],
-    recipeToDisplay: null
+    recipesToDisplay: [],
+    pageRecipe: null,
+    filters: {
+        keyword: "",
+        tags: [],
+        difficulty: "ANY",
+        cookingTimeFrom: "0",
+        cookingTimeTo: "0",
+        publishedFrom: "",
+        publishedTo: ""
+    }
 }
 
 const recipesSlice = createSlice({
@@ -14,10 +24,12 @@ const recipesSlice = createSlice({
         setRecipes(state, action) {
             return {...state, recipes: [...action.payload]}
         },
-        setRecipeToDisplay(state, action) {
+        setPageRecipe(state, action) {
             return {...state, recipeToDisplay: {...action.payload}}
+        },
+        setFilterField(state, action) {
+            state.filters[action.payload.field as keyof typeof state.filters] = action.payload.value
         }
-
     }
 })
 

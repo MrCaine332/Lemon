@@ -1,4 +1,5 @@
 import React from 'react';
+// import "./resources/fonts/futura/FuturaLT-Light.ttf"
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';

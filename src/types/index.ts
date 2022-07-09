@@ -1,5 +1,14 @@
 import React from "react";
 
+
+export interface IUser {
+    id: string
+    email: string
+    username: string
+    isActivated: boolean
+    role: string
+}
+
 export interface IForms {
     LOGIN: {
         type: string
@@ -25,6 +34,7 @@ export interface IFormCredentials {
 
 export interface INavbar {
     dropdowns: boolean
+    links: boolean
     search: boolean
     isVertical: boolean
     linkOnClick?: () => void
@@ -76,7 +86,7 @@ export interface ISlider {
 
 export interface IAuthState {
     isAuthenticated: boolean
-    user: any
+    user: IUser
     isFetching: boolean
     formType: {
         type: string
@@ -88,6 +98,7 @@ export interface IAuthState {
 export interface IHomeState {
     sliderRecipes: IRecipe[]
     newestRecipes: IRecipe[]
+    searchString: string
     featuredRecipes: {
         easyRecipes: IRecipe[]
         mediumRecipes: IRecipe[]
@@ -97,5 +108,15 @@ export interface IHomeState {
 
 export interface IRecipesState {
     recipes: IRecipe[]
-    recipeToDisplay: IRecipe | null
+    recipesToDisplay: IRecipe[]
+    pageRecipe: IRecipe | null
+    filters: {
+        keyword: string
+        tags: []
+        difficulty: string
+        cookingTimeFrom: string
+        cookingTimeTo: string
+        publishedFrom: string
+        publishedTo: string
+    }
 }

@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
     return (
         <div className="padding_footer block_outline footer">
             <Logo logoImage={logoImage} />
-            <Navbar dropdowns={false} search={false} isVertical={false} />
+            <Navbar dropdowns={false} links={true} search={false} isVertical={false} />
             <Copyrights />
         </div>
     );

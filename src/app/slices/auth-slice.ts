@@ -1,11 +1,15 @@
 import {createSlice} from "@reduxjs/toolkit";
-import userData from "../../data/users.json"
 import {IAuthState} from "../../types";
-
 
 const initialState: IAuthState = {
     isAuthenticated: false,
-    user: null,
+    user: {
+        id: "",
+        email: "",
+        username: "",
+        role: "",
+        isActivated: false
+    },
     isFetching: false,
     formType: {
         type: "LOGIN",
@@ -25,14 +29,13 @@ const authSlice = createSlice({
     initialState: initialState,
     reducers: {
         login(state, action) {
-            const candidate = userData.find(user =>
-                user.email === action.payload.login || user.username === action.payload.login)
-            if (candidate) {
-                return {...state, user: candidate, isAuthenticated: true}
-            }
+            state.user = action.payload
+            state.isAuthenticated = true
         },
         logout(state) {
-            return {...state, user: null, isAuthenticated: false}
+            // return {...state, user: null, isAuthenticated: false}
+            state.user = initialState.user
+            state.isAuthenticated = false
         },
         register(state) {
 
@@ -55,9 +58,14 @@ const authSlice = createSlice({
                 formCredentials: {...state.formCredentials,
                     [action.payload.field]: action.payload.value}}
         },
+        setIsFetching(state, action) {
+            state.isFetching = action.payload
+        },
+        setIsAuthenticated(state, action) {
+            state.isAuthenticated = action.payload
+        }
     }
 })
-
 
 const { actions, reducer } = authSlice
 

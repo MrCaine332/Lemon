@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
+//@font-face {
+//  font-family: "Futura";
+//  src: local("Futura"),
+//  url("./resources/fonts/futura/FuturaLT.ttf") format("truetype");
+//}
+
 :root {
   --bg-color: #EAEAEA;
   --main-color: #F8F8F8;
@@ -9,9 +15,7 @@
   --color-text-2: #2D2D2D;
   --color-text-footer: #7D7D7D;
   --color-darkgray: #555555;
-
   --color-footer: #2F2F2F;
-
   --color-shadow: rgba(0, 0, 0, .15);
 }
 

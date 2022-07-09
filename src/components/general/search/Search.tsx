@@ -1,26 +1,27 @@
-import React, {useState} from "react";
+import React from "react";
 import "./Search.scss"
 import {FaSearch} from "react-icons/fa";
+import {useAppDispatch, useAppSelector} from "../../../hooks";
+import {homeActions} from "../../../app/slices/home-slice";
 
-const Search: React.FC<{placeholder: string}> = ({placeholder}) => {
+interface ISearch {
+    placeholder: string
+    value: string
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+}
 
-    const [searchString, setSearchString] = useState<string>("")
-
-    const onChangeSearchString = (event: React.ChangeEvent<HTMLInputElement>) :void => {
-        setSearchString(event.target.value)
-    }
+const Search: React.FC<ISearch> = ({placeholder, onChange, value}) => {
 
     const onSearch = (event: React.KeyboardEvent) => {
         if (event.key === "Enter") {
-            setSearchString("")
         }
     }
 
     return (
         <div className="search">
-            <input value={searchString} onChange={onChangeSearchString} onKeyDown={onSearch} />
+            <input name="keyword" value={value} onChange={onChange} onKeyDown={onSearch} />
             {
-                searchString === "" &&
+                value === "" &&
                 <div className="search__placeholder">
                     <FaSearch />
                     <span>{placeholder}</span>

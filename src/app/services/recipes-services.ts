@@ -14,6 +14,6 @@ export const getRecipeById = (id: number) => {
     return (dispatch: AppDispatch) => {
         const recipesDataCopy = [...recipesData]
         const recipeToSend = recipesDataCopy.find(recipe => recipe._id === id)
-        dispatch(recipesActions.setRecipeToDisplay(recipeToSend))
+        dispatch(recipesActions.setPageRecipe(recipeToSend))
     }
 }

@@ -18,6 +18,7 @@ import {getFeaturedRecipes, getNewest, getTodaySelection} from "./app/services/h
 
 import {styleActions} from "./app/slices/style-slice";
 import {useAppDispatch, useAppSelector, useWindowSize} from "./hooks";
+import {checkAuth} from "./app/services/auth-services";
 
 
 const App: React.FC = () => {
@@ -36,6 +37,14 @@ const App: React.FC = () => {
     useEffect(() => {
         dispatch(styleActions.setWindowDimension(windowSize))
     }, [dispatch, windowSize])
+
+
+    useEffect(() => {
+        if (localStorage.getItem('USER_TOKEN')) {
+            dispatch(checkAuth())
+        }
+    }, [])
+
 
     return (
         <BrowserRouter>

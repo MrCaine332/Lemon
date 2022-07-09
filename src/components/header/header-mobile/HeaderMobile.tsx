@@ -30,7 +30,7 @@ const HeaderMobile: React.FC = () => {
             <header className="header-mobile">
                 <Logo logoImage={logoImage}/>
                 <div className="header-mobile__right">
-                    {styleState.windowWidth >= 440 && <Search placeholder={"FIND A RECIPE"}/>}
+                    {styleState.windowWidth >= 440 && <Navbar dropdowns={false} links={false} search={true} isVertical={false} />}
                     <div className="hamburger__wrap" onClick={hamburgerOnClick}>
                         <div ref={hamburgerRef} className="hamburger"/>
                     </div>
@@ -40,7 +40,11 @@ const HeaderMobile: React.FC = () => {
                 <div className="mobile__menu">
                     <div className="mobile-menu__item">
                         <nav className="mobile-menu__nav">
-                            <Navbar dropdowns={false} search={true} isVertical={true} linkOnClick={hamburgerOnClick} />
+                            <Navbar dropdowns={false}
+                                    links={true}
+                                    search={styleState.windowWidth < 440}
+                                    isVertical={true}
+                                    linkOnClick={hamburgerOnClick} />
                             <hr className="separation-horizontal"/>
                             <h3 onClick={displayAccount}>MY ACCOUNT</h3>
                         </nav>

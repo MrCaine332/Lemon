@@ -20,7 +20,7 @@ const Header: React.FC = () => {
     return (
         <header ref={headerRef} className="header section shadow-wide">
             <Logo logoImage={logoImage} />
-            <Navbar dropdowns={true} search={true} isVertical={false} />
+            <Navbar dropdowns={true} links={true} search={true} isVertical={false} />
             <Account />
         </header>
     )
