@@ -1,7 +1,7 @@
 import React from 'react';
-import clockIcon from "../../../resources/icons/ClockIcon.png";
-import commentIcon from "../../../resources/icons/CommentIcon.png";
-import viewIcon from "../../../resources/icons/ViewIcon.png";
+import clockIcon from "../../resources/icons/ClockIcon.png";
+import commentIcon from "../../resources/icons/CommentIcon.png";
+import viewIcon from "../../resources/icons/ViewIcon.png";
 import "./ClockViewsComs.scss"
 
 interface IClockViewsComs {

@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import BlockTitle from "../../components/general/block-title/BlockTitle";
+import BlockTitle from "../../templates/block-title/BlockTitle";
 import "./CreateRecipe.scss"
 import CreateRecipeList from "../../components/create-recipe-list/CreateRecipeList";
 
 import image from "../../resources/images/404.png"
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {newRecipeActions} from "../../app/slices/new-recipe-slice";
+import CreateRecipeSteps from "../../components/create-recipe-list/steps/CreateRecipeSteps";
 
 const CreateRecipe = () => {
 
@@ -31,8 +32,10 @@ const CreateRecipe = () => {
             <form className="new-recipe__form">
                 <div className="new-recipe__head">
                     <div className="new-recipe__head-inputs">
-                        <input name="title" type="text" placeholder="RECIPE TITLE" onChange={onInputChange} value={newRecipeData.title} />
-                        <textarea name="description" placeholder="RECIPE DESCRIPTION" onChange={onInputChange} value={newRecipeData.description} />
+                        <input name="title" type="text" placeholder="GIVE YOUR RECIPE A TITLE" onChange={onInputChange} value={newRecipeData.title} />
+                        <textarea name="description"
+                                  placeholder="SHARE THE STORY BEHIND YOUR RECIPE AND WHAT MAKES IT SPECIAL"
+                                  onChange={onInputChange} value={newRecipeData.description} />
                     </div>
                     <div className="new-recipe__head-image">
                         <label htmlFor="upload-image">
@@ -43,7 +46,10 @@ const CreateRecipe = () => {
                 </div>
                 <div className="new-recipe__body">
                     <CreateRecipeList title="Ingredients" />
-                    <CreateRecipeList title="Steps" />
+                    <CreateRecipeSteps title="Steps" />
+                </div>
+                <div className="new-recipe__body">
+                    <BlockTitle title="Additional" />
                 </div>
             </form>
         </div>

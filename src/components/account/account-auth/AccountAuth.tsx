@@ -3,13 +3,13 @@ import "./AccountAuth.scss"
 import {Link} from "react-router-dom";
 import GoogleIcon from "../../../resources/icons/GoogleIcon.png"
 import FacebookIcon from "../../../resources/icons/FacebookIcon.png"
-import BlockTitle from "../../general/block-title/BlockTitle";
-import {IAuthState, IForms} from "../../../types";
+import BlockTitle from "../../../templates/block-title/BlockTitle";
 import {authActions} from "../../../app/slices/auth-slice";
-import AppButton from "../../general/app-button/AppButton";
+import AppButton from "../../../templates/app-button/AppButton";
 import {useAppDispatch} from "../../../hooks";
 import {login, registration} from "../../../app/services/auth-services";
-import $api from "../../../app/http";
+import {IForms} from "../../../types/components";
+import {IAuthState} from "../../../types/slices";
 
 const forms: IForms = {
     LOGIN: [
@@ -36,23 +36,17 @@ const AccountAuth: React.FC<{auth: IAuthState}> = ({ auth }) => {
         dispatch(authActions.toggleFormType())
     }
 
-    const onSubmit = async () => {
+    const onSubmit = () => {
         if (auth.formType.type === "LOGIN")
             dispatch(login())
         if (auth.formType.type === "REGISTRATION")
             dispatch(registration())
     }
 
-    const test = async () => {
-        console.log(auth)
-    }
-
-
     return (
         <>
             <BlockTitle title={auth.formType.text} />
             <form className="auth__form">
-                {/*<p>{auth.formType.text} for LEMON</p>*/}
                 { forms[auth.formType.type as keyof typeof forms].map((input) => (
                     <input
                         key={input.credentialType}
@@ -76,23 +70,20 @@ const AccountAuth: React.FC<{auth: IAuthState}> = ({ auth }) => {
                 }
 
                 <div className="auth__button">
-                    <AppButton
-                        type="button"
-                        disabled={auth.isFetching}
-                        name={auth.formType.type === "LOGIN" ? "SIGN IN" : "SIGN UP"}
-                        onClick={onSubmit}
-                        className="primary"
-                    />
+                    <AppButton type="button" disabled={auth.isFetching} onClick={onSubmit} className="primary">
+                        {auth.formType.type === "LOGIN" ? "SIGN IN" : "SIGN UP"}
+                    </AppButton>
                 </div>
                 <div className="auth__icons">
                     <img src={FacebookIcon} alt=""/>
                     <img src={GoogleIcon} alt=""/>
                 </div>
-
                 { auth.formType.type === "LOGIN" &&
                     <label className="auth__change-form">
                         Don't have an account?&nbsp;
-                        <AppButton type="button" name="Sign Up" className="secondary" onClick={onFormTypeChange} />
+                        <AppButton type="button" className="secondary" onClick={onFormTypeChange}>
+                            Sign Up
+                        </AppButton>
                     </label> }
                 { auth.formType.type === "REGISTRATION" &&
                     <>
@@ -101,11 +92,11 @@ const AccountAuth: React.FC<{auth: IAuthState}> = ({ auth }) => {
                         </div>
                         <label className="auth__change-form">
                             Already have an account?&nbsp;
-                            <AppButton type="button" name="Sign In" className="secondary" onClick={onFormTypeChange} />
+                            <AppButton type="button" className="secondary" onClick={onFormTypeChange}>
+                                Sign In
+                            </AppButton>
                         </label>
                     </> }
-
-                <AppButton type="button" name="test" onClick={test} className="primary"/>
             </form>
         </>
     )

@@ -1,10 +1,8 @@
 import React from 'react';
 import LemonLogoBig from "../../../../resources/logo/LemonLogoBig.png";
 import "./SliderHeroText.scss"
-import {IRecipe} from "../../../../types";
-import {useNavigate} from "react-router-dom";
-import App from "../../../../App";
-import AppButton from "../../../general/app-button/AppButton";
+import AppButton from "../../../../templates/app-button/AppButton";
+import {IRecipe} from "../../../../types/models";
 
 const SliderHeroText: React.FC<{sliderItem: IRecipe}> = ({sliderItem}) => {
 
@@ -16,7 +14,11 @@ const SliderHeroText: React.FC<{sliderItem: IRecipe}> = ({sliderItem}) => {
             <div className="slider__hero-text">
                 <h2>{sliderItem?.title}</h2>
                 <p>{sliderItem?.description}</p>
-                <AppButton type="link" to={`/recipe/${sliderItem?._id}`} name="GET RECIPE" className="primary" />
+                <AppButton type="link"
+                           to={`/recipe/${sliderItem?._id}`}
+                           className="primary" >
+                    GET RECIPE
+                </AppButton>
             </div>
         </div>
     );

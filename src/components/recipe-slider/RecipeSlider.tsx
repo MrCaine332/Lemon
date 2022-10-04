@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import "./RecipeSlider.scss"
-import heroSlider from "../../resources/scripts/slider";
+// import heroSlider from "../../resources/scripts/slider";
 
 interface IRecipeSlider {
     images: string[]
@@ -12,10 +12,10 @@ const RecipeSlider: React.FC<IRecipeSlider> = ({ images }) => {
     const dotsRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-        const interval = heroSlider(sliderRef.current!, dotsRef.current!)
-        return () => {
-            clearInterval(interval)
-        }
+        // const interval = heroSlider(sliderRef.current!, dotsRef.current!)
+        // return () => {
+        //     clearInterval(interval)
+        // }
     }, [])
 
     return (

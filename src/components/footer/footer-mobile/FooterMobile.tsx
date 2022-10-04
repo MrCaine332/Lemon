@@ -6,7 +6,7 @@ import Copyrights from "../copyrights/Copyrights";
 import "./FooterMobile.scss"
 import googleIcon from "../../../resources/icons/GoogleIcon.png";
 import facebookIcon from "../../../resources/icons/FacebookIcon.png";
-import Search from "../../general/search/Search";
+import Search from "../../../templates/search/Search";
 import {NavLink} from "react-router-dom";
 import NavbarList from "../../navbar/navbar-list/NavbarList";
 

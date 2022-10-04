@@ -3,8 +3,8 @@ import Logo from "../../logo/Logo";
 import logoImage from "../../../resources/logo/LemonLogo.png";
 import "./HeaderMobile.scss"
 import ShowMobileMenu from "../../../resources/scripts/showMobileMenu";
-import Search from "../../general/search/Search";
-import AppButton from "../../general/app-button/AppButton";
+import Search from "../../../templates/search/Search";
+import AppButton from "../../../templates/app-button/AppButton";
 import Navbar from "../../navbar/Navbar";
 import AccountAuth from "../../account/account-auth/AccountAuth";
 import {useAppSelector} from "../../../hooks";

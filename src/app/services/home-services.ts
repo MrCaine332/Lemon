@@ -1,10 +1,10 @@
 import {AppDispatch} from "../store";
 import {homeActions} from "../slices/home-slice";
 import recipesData from "../../data/recipes.json"
-import {IRecipe} from "../../types";
+import {IRecipe} from "../../types/models";
 
 export const getTodaySelection = () => {
-    return (dispatch: AppDispatch) => {
+    return async (dispatch: AppDispatch) => {
         const recipesDataCopy = [...recipesData]
         const todaySelectionData: IRecipe[] = []
 
@@ -14,7 +14,7 @@ export const getTodaySelection = () => {
             recipesDataCopy.splice(index, 1)
         }
 
-        dispatch(homeActions.setSliderRecipes(todaySelectionData))
+        await dispatch(homeActions.setSliderRecipes(todaySelectionData))
     }
 }
 

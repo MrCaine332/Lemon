@@ -1,9 +1,7 @@
 import React, { useEffect } from "react"
 
 import "./App.scss"
-import "./resources/styles/link/link.scss"
 import "./resources/styles/input/input.scss"
-import "./resources/styles/select/select.scss"
 import "./resources/styles/line/hr.scss"
 import "./resources/styles/headers/headers.scss"
 import "./resources/styles/button/button.scss"
@@ -29,6 +27,9 @@ const App: React.FC = () => {
     const styleState = useAppSelector(state => state.style)
 
     useEffect(() => {
+        if (localStorage.getItem('USER_TOKEN')) {
+            dispatch(checkAuth())
+        }
         dispatch(getTodaySelection())
         dispatch(getNewest())
         dispatch(getFeaturedRecipes())
@@ -37,14 +38,6 @@ const App: React.FC = () => {
     useEffect(() => {
         dispatch(styleActions.setWindowDimension(windowSize))
     }, [dispatch, windowSize])
-
-
-    useEffect(() => {
-        if (localStorage.getItem('USER_TOKEN')) {
-            dispatch(checkAuth())
-        }
-    }, [])
-
 
     return (
         <BrowserRouter>

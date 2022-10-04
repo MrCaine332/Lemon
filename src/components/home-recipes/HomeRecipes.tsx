@@ -1,16 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import "./HomeRecipes.scss"
-import BlockTitle from "../general/block-title/BlockTitle";
-import recipeImage1 from "../../resources/images/Recipe1.png"
-import recipeImage2 from "../../resources/images/Recipe2.png"
-import recipeImage3 from "../../resources/images/Recipe3.png"
+import BlockTitle from "../../templates/block-title/BlockTitle";
 import HomeRecipeItem from "../home-recipe-item/HomeRecipeItem";
-import AppButton from "../general/app-button/AppButton";
+import AppButton from "../../templates/app-button/AppButton";
 import {useAppSelector} from "../../hooks";
 
 const HomeRecipes: React.FC = () => {
 
-    const homeState = useAppSelector(state => state.home)
+    const featuredRecipes = useAppSelector(state => state.home.featuredRecipes)
 
     const [difficulty, setDifficulty] = useState("easyRecipes")
 
@@ -22,19 +19,28 @@ const HomeRecipes: React.FC = () => {
         <div className="shadow-wide section padding_double-col home__recipes-wrap">
             <BlockTitle title={"Recipes"} />
             <div className="home__recipes-difficulties">
-                <AppButton type="button" name="EASY"
+                <AppButton type="button"
                            onClick={() => onDifficultyChange("easyRecipes")}
-                           className={`secondary ${difficulty === "easyRecipes" && "difficulty_active"}`} />
-                <AppButton type="button" name="MEDIUM"
+                           className={`secondary ${difficulty === "easyRecipes" && "difficulty_active"}`}
+                >
+                    EASY
+                </AppButton>
+                <AppButton type="button"
                            onClick={() => onDifficultyChange("mediumRecipes")}
-                           className={`secondary ${difficulty === "mediumRecipes" && "difficulty_active"}`} />
-                <AppButton type="button" name="HARD"
+                           className={`secondary ${difficulty === "mediumRecipes" && "difficulty_active"}`}
+                >
+                    MEDIUM
+                </AppButton>
+                <AppButton type="button"
                            onClick={() => onDifficultyChange("hardRecipes")}
-                           className={`secondary ${difficulty === "hardRecipes" && "difficulty_active"}`} />
+                           className={`secondary ${difficulty === "hardRecipes" && "difficulty_active"}`}
+                >
+                    HARD
+                </AppButton>
             </div>
             <div className="home__recipes">
 
-                { homeState.featuredRecipes[difficulty as keyof typeof homeState.featuredRecipes]?.map(recipe => (
+                { featuredRecipes[difficulty as keyof typeof featuredRecipes]?.map(recipe => (
                     <HomeRecipeItem
                         key={recipe._id}
                         recipe={recipe}
@@ -43,11 +49,11 @@ const HomeRecipes: React.FC = () => {
                     />
                 ))}
 
-
-
             </div>
             <div className="home__recipes-button">
-                <AppButton type="button" to={"/"} name="VIEW MORE" className="primary" />
+                <AppButton type="button" to={"/"} className="primary">
+                    VIEW MORE
+                </AppButton>
             </div>
         </div>
     );

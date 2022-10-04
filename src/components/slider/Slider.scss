@@ -37,6 +37,26 @@
   background-color: var(--color-darkgray);
 }
 
+.slider__button {
+  position: absolute;
+  z-index: 98;
+  height: 100%;
+  width: 50px;
+  background-color: rgba(0, 0, 0, 0.07);
+  top: 0;
+  transition: 0.15s;
+
+  &_left {
+    left: 0;
+  }
+  &_right {
+    right: 0;
+  }
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.10);
+  }
+}
+
 @media (max-width: 768px) {
   .slider__dots-wrap {
     width: 100%;

@@ -10,6 +10,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="EDProject2" />
-    <orderEntry type="module" module-name="fullstack-jwt-auth-master" />
+    <orderEntry type="module" module-name="GraduationProject" />
   </component>
 </module>

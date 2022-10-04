@@ -6,7 +6,7 @@ import authorSignature from "../../resources/images/Signature.png"
 import googleIcon from "../../resources/icons/GoogleIcon.png"
 import facebookIcon from "../../resources/icons/FacebookIcon.png"
 
-import BlockTitle from "../general/block-title/BlockTitle"
+import BlockTitle from "../../templates/block-title/BlockTitle"
 import {useAppSelector} from "../../hooks";
 
 const Author: React.FC = () => {

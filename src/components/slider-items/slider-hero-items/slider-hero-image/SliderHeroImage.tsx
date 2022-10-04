@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import "./SliderHeroImage.scss"
-import {IRecipe} from "../../../../types";
+import {IRecipe} from "../../../../types/models";
 
 const SliderHeroImage: React.FC<{sliderItem: IRecipe}> = ({sliderItem}) => {
 

@@ -1,10 +1,10 @@
 import React from "react";
 import "./Navbar.scss"
-import Search from "../general/search/Search";
+import Search from "../../templates/search/Search";
 import NavbarList from "./navbar-list/NavbarList";
-import {INavbar} from "../../types";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {homeActions} from "../../app/slices/home-slice";
+import {INavbar} from "../../types/components";
 
 
 const Navbar: React.FC<INavbar> = ({ dropdowns, links, search, isVertical, linkOnClick }) => {

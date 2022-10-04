@@ -1,11 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import clockIcon from "../../resources/icons/ClockIcon.png";
-import commentIcon from "../../resources/icons/CommentIcon.png";
-import viewIcon from "../../resources/icons/ViewIcon.png";
-import ClockViewsComs from "../general/clock-views-coms/ClockViewsComs";
+import ClockViewsComs from "../../templates/clock-views-coms/ClockViewsComs";
 import "./HomeRecipeItem.scss"
-import {IRecipe} from "../../types";
 import {Link} from "react-router-dom";
+import {IRecipe} from "../../types/models";
 
 interface IHomeRecipeItem {
     recipe: IRecipe
@@ -13,7 +10,11 @@ interface IHomeRecipeItem {
     description?: boolean
 }
 
-const HomeRecipeItem: React.FC<IHomeRecipeItem> = ({ recipe, description, direction}) => {
+const HomeRecipeItem: React.FC<IHomeRecipeItem> = ({
+    recipe,
+    description,
+    direction
+}) => {
 
     const [image, setImage] = useState("")
 

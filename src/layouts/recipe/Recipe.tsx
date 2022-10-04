@@ -5,7 +5,7 @@ import recipe2 from "../../resources/images/Recipe2.png"
 import recipe3 from "../../resources/images/Recipe3.png"
 import RecipeSlider from "../../components/recipe-slider/RecipeSlider";
 import RecipeInfo from "../../components/recipe-info/RecipeInfo";
-import BlockTitle from "../../components/general/block-title/BlockTitle";
+import BlockTitle from "../../templates/block-title/BlockTitle";
 import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {getRecipeById} from "../../app/services/recipes-services";

@@ -1,7 +1,7 @@
 import React from 'react';
 import "./NotFound.scss"
 import BlockTitle from "../block-title/BlockTitle";
-import errorImg from "../../../resources/images/404.png"
+import errorImg from "../../resources/images/404.png"
 import {useNavigate} from "react-router-dom";
 
 const NotFound: React.FC = () => {

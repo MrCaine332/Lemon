@@ -3,7 +3,7 @@ import {Navigate, Route, Routes} from "react-router-dom";
 import Home from "./layouts/home/Home";
 import Recipes from "./layouts/recipes/Recipes";
 import Recipe from "./layouts/recipe/Recipe";
-import NotFound from "./components/general/not-found/NotFound";
+import NotFound from "./templates/not-found/NotFound";
 import CreateRecipe from "./layouts/create-recipe/CreateRecipe";
 
 const Router = () => {

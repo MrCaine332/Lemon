@@ -29,12 +29,12 @@
 @media (max-width: 768px) {
   .slider__hero-text_wrap {
     padding: 0 60px 20px 60px;
+    .slider__hero-text {
+      padding-top: 15px;
+    }
   }
   .slider__hero-logo {
     display: none;
-  }
-  .slider__hero-text {
-    padding-top: 0;
   }
   .hero__slider-item {
     flex-direction: column-reverse;

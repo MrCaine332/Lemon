@@ -2,7 +2,7 @@ import React from 'react';
 import "./RecipeInfo.scss"
 import clocksIcon from "../../resources/icons/ClockIcon.png"
 import easyIcon from "../../resources/icons/EasyIcon.png"
-import {IRecipe} from "../../types";
+import {IRecipe} from "../../types/models";
 
 const RecipeInfo: React.FC<{ recipe: IRecipe }> = ({ recipe }) => {
     return (

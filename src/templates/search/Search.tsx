@@ -1,8 +1,6 @@
 import React from "react";
 import "./Search.scss"
 import {FaSearch} from "react-icons/fa";
-import {useAppDispatch, useAppSelector} from "../../../hooks";
-import {homeActions} from "../../../app/slices/home-slice";
 
 interface ISearch {
     placeholder: string

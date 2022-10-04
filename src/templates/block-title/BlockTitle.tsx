@@ -1,7 +1,6 @@
 import React from "react";
 import "./BlockTitle.scss"
 
-
 const BlockTitle: React.FC<{title: string}> = ({ title }) => {
     return (
         <div className="block-header">

@@ -1,0 +1,51 @@
+//button, a {
+//  display: block;
+//  text-decoration: none;
+//  color: var(--color-text);
+//  transition: 0.3s;
+//  cursor: pointer;
+//  border: none;
+//  background-color: transparent;
+//  width: fit-content;
+//
+//  &.primary {
+//    font-size: 14pt;
+//    padding: 11px 32px 5px 32px;
+//    background-color: transparent;
+//    border: 1px solid var(--color-accents);
+//    cursor: pointer;
+//
+//    &:hover {
+//      background-color: var(--bg-color);
+//    }
+//  }
+//
+//  &.secondary {
+//    font-size: 14pt;
+//    position: relative;
+//
+//    &::after {
+//      content: "";
+//      width: 0;
+//      height: 2px;
+//      position: absolute;
+//      left: 0;
+//      bottom: 0;
+//      transition: 0.3s ease-out;
+//      background-color: var(--color-text);
+//    }
+//
+//    &:hover::after {
+//      width: 100%;
+//    }
+//
+//  }
+//
+//  &.tertiary {
+//
+//  }
+//}
+//
+//.button_disabled {
+//  background-color: var(--color-accents);
+//}

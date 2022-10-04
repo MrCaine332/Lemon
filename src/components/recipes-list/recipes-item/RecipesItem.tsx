@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import "./RecipesItem.scss"
 import {Link} from "react-router-dom";
-import {IRecipe} from "../../../types";
-import ClockViewsComs from "../../general/clock-views-coms/ClockViewsComs";
+import ClockViewsComs from "../../../templates/clock-views-coms/ClockViewsComs";
+import {IRecipe} from "../../../types/models";
 
 interface IRecipeItem {
     recipe: IRecipe

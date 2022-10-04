@@ -1,34 +1,49 @@
 import React, {useEffect, useRef} from 'react';
-import {ISlider} from "../Slider";
 import Slider from "../../../resources/scripts/slider";
 import "./SliderMovable.scss"
-import {useAppSelector} from "../../../hooks";
+import {ISlider} from "../../../types/components";
 
-const SliderMovable: React.FC<ISlider> = ({items, ratio, dotsRef}) => {
+const SliderMovable: React.FC<ISlider> = (
+    {
+        itemsToDisplay = 1,
+        dotsRef,
+        leftButtonRef,
+        rightButtonRef,
+        children
+    }) => {
 
     const sliderRef = useRef<HTMLDivElement>(null)
-    const styleState = useAppSelector(state => state.style)
 
     useEffect(() => {
-        if (items.length > 1) {
-            const interval = Slider(sliderRef.current!, dotsRef?.current)
-            return () => {
-                clearInterval(interval)
-            }
+        const slider = new Slider(
+            sliderRef.current!,
+            itemsToDisplay,
+            leftButtonRef?.current!,
+            rightButtonRef?.current!
+        )
+        slider.init()
+        return () => {
+            slider.destroy()
         }
-    }, [items.length])
+    }, [])
 
     return (
         <div ref={sliderRef} className="slider__movable">
-            { items.map((item: any, index: number) => (
+            {children.map((child, index) => (
                 <div className="slider__item" key={index}>
-                    {item.map((component: any, index: number) => (
-                        <div key={index} style={{width: styleState.windowWidth > 768 ? ratio[index]!.toString() + "%" : ""}}>
-                            {component}
-                        </div>
-                        ))}
+                    {child}
                 </div>
             ))}
+            {children.map((child, index) => {
+                if (index < itemsToDisplay) {
+                    return (
+                        <div className="slider__item" key={index}>
+                            {child}
+                        </div>
+                    )
+                }
+                return (<></>)
+            })}
         </div>
     );
 };

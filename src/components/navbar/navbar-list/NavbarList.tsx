@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
 import "./NavbarList.scss"
 import NavbarDropdown from "../navbar-dropdown/NavbarDropdown";
-import {INavbarItem, INavbarList} from "../../../types";
-import AppButton from "../../general/app-button/AppButton";
+import AppButton from "../../../templates/app-button/AppButton";
+import {INavbarItem, INavbarList} from "../../../types/components";
 
 const navbarItems: INavbarItem[] = [
     { linkTitle: "HOME", linkAddress: "/home" },
@@ -24,7 +24,10 @@ const NavbarList: React.FC<INavbarList> = ({ dropdowns, linkOnClick  }) => {
             { navbarItems.map((item) => {
                 return (
                     <div key={item.linkTitle} className="navbar__link">
-                        <AppButton type="link" to={item.linkAddress} name={item.linkTitle} onClick={linkOnClick} className="secondary" />
+                        <AppButton type="link" to={item.linkAddress}
+                                   onClick={linkOnClick} className="secondary">
+                            {item.linkTitle}
+                        </AppButton>
                         { dropdowns && item.submenuItems &&
                             <NavbarDropdown items={item.submenuItems} />
                         }

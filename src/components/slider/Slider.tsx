@@ -18,43 +18,65 @@
                          second will have 45% of width of a slider.
 
         height - height of the slider while screen width > 768px.
-                 By default is equal to the highest height of all page components
+                 By default, is equal to the highest height of all page components
 
-        width - width of the slider. By default is equal to 100%
+        width - width of the slider. By default, is equal to 100%
 
 */
 
-import React, {useEffect, useRef} from "react"
+import React, {useEffect, useRef, useState} from "react"
 import "./Slider.scss"
 import SliderMovable from "./slider-movable/SliderMovable";
 import {useAppSelector} from "../../hooks";
+import {ISlider} from "../../types/components";
 
-export interface ISlider {
-    items: any
-    ratio: number[]
-    height?: string
-    width?: string
-    dotsRef? : React.RefObject<HTMLDivElement>
-}
 
-const Slider: React.FC<ISlider> = ({items, ratio, height, width}) => {
-
-    const dotsRef = useRef<HTMLDivElement>(null)
+const Slider: React.FC<ISlider> = ({itemsToDisplay = 1, height, children}) => {
 
     const styleState = useAppSelector(state => state.style)
 
+    const leftButtonRef = useRef(null)
+    const rightButtonRef = useRef(null)
+
     return (
-        <div className={"slider section shadow-wide"} style={{height: styleState.windowWidth > 768 && height ? height : "", width: width && width}}>
-            <SliderMovable items={items} ratio={ratio} dotsRef={dotsRef} />
-            <div className="slider__dots-wrap">
-                <div ref={dotsRef} className="slider__dots">
-                    { items.map((item: any, index: number) => (
-                        <div className="slider__dot" key={index}/>
-                    ))}
-                </div>
-            </div>
+        <div className="slider section shadow-wide"
+             style={styleState.windowWidth > 768 && height ? {height: height} : {}}>
+            <SliderMovable
+                itemsToDisplay={itemsToDisplay}
+                leftButtonRef={leftButtonRef}
+                rightButtonRef={rightButtonRef}
+            >
+                {children}
+            </SliderMovable>
+            {/*<div ref={leftButtonRef} className="slider__button slider__button_left" />*/}
+            {/*<div ref={rightButtonRef} className="slider__button slider__button_right" />*/}
+
+            {/*<div className="slider__dots-wrap">*/}
+            {/*    <div ref={dotsRef} className="slider__dots">*/}
+            {/*        {items.map((item: any, index: number) => (*/}
+            {/*            <div className="slider__dot" key={index}/>*/}
+            {/*        ))}*/}
+            {/*    </div>*/}
+            {/*</div>*/}
         </div>
     )
+
+    // const dotsRef = useRef<HTMLDivElement>(null)
+    //
+    // const styleState = useAppSelector(state => state.style)
+    //
+    // return (
+    //     <div className={"slider section shadow-wide"} style={{height: styleState.windowWidth > 768 && height ? height : "", width: width && width}}>
+    //         <SliderMovable items={items} ratio={ratio} dotsRef={dotsRef} />
+    //         <div className="slider__dots-wrap">
+    //             <div ref={dotsRef} className="slider__dots">
+    //                 { items.map((item: any, index: number) => (
+    //                     <div className="slider__dot" key={index}/>
+    //                 ))}
+    //             </div>
+    //         </div>
+    //     </div>
+    // )
 }
 
 export default Slider;

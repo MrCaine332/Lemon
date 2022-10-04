@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {IAuthState} from "../../types";
+import {IAuthState} from "../../types/slices";
 
 const initialState: IAuthState = {
     isAuthenticated: false,

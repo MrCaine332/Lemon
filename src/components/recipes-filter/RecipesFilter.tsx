@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import BlockTitle from "../general/block-title/BlockTitle";
+import BlockTitle from "../../templates/block-title/BlockTitle";
 import "./RecipesFilter.scss"
-import Search from "../general/search/Search";
+import Search from "../../templates/search/Search";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {recipesActions} from "../../app/slices/recipes-slice";
+import AppButton from "../../templates/app-button/AppButton";
 
 const RecipesFilter: React.FC = () => {
 
@@ -27,9 +28,30 @@ const RecipesFilter: React.FC = () => {
             <div className="recipe__filter">
                 <div className="filter__item">
                     <Search value={filters.keyword} onChange={onFilterChange} placeholder={"RECIPE TITLE OR USER"} />
+                    {/*<div className="filter__tags">*/}
+                    {/*    <span>Tags</span>*/}
+                    {/*    <hr className="separation-vertical" />*/}
+                    {/*    <div className="filter__tags-items">*/}
+                    {/*        <div className="filter__test">dsfsdf</div>*/}
+                    {/*        <div className="filter__test">dsfsdf</div>*/}
+                    {/*        <div className="filter__test">dsfsdf</div>*/}
+                    {/*        <div className="filter__test">dsfsdf</div>*/}
+                    {/*    </div>*/}
+                    {/*    <hr className="separation-vertical" />*/}
+                    {/*</div>*/}
                     <div className="filter__tags">
-                        <div>
-                            dsfsdf
+                        <div className="filter__tags-items_wrap">
+                            <span>Tags</span>
+                            <hr className="separation-vertical" />
+                            <div className="filter__tags-items">
+
+                            </div>
+                            <hr className="separation-vertical" />
+                        </div>
+                        <div className="filter__tags-add">
+                            <AppButton type={'button'} className="primary">
+                                ADD TAG
+                            </AppButton>
                         </div>
                     </div>
                 </div>

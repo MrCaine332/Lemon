@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {IHomeState} from "../../types";
+import {IHomeState} from "../../types/slices";
 
 
 const initialState: IHomeState = {

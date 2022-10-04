@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import BlockTitle from "../general/block-title/BlockTitle";
+import BlockTitle from "../../templates/block-title/BlockTitle";
 import "./RecipesList.scss"
 import RecipesItem from "./recipes-item/RecipesItem";
 import {useAppDispatch, useAppSelector} from "../../hooks";
