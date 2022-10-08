@@ -25,16 +25,16 @@ const SliderMovable: React.FC<ISlider> = (
         return () => {
             slider.destroy()
         }
-    }, [])
+    }, [itemsToDisplay, leftButtonRef, rightButtonRef])
 
     return (
         <div ref={sliderRef} className="slider__movable">
-            {children.map((child, index) => (
+            {children?.map((child, index) => (
                 <div className="slider__item" key={index}>
                     {child}
                 </div>
             ))}
-            {children.map((child, index) => {
+            {children?.map((child, index) => {
                 if (index < itemsToDisplay) {
                     return (
                         <div className="slider__item" key={index}>

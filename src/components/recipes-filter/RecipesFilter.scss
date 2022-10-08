@@ -42,60 +42,14 @@
   }
 
   .filter__tags {
-    width: calc(70% - 15px);
-    height: 35px;
-    background-color: transparent;
-    //background-color: lightcoral;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
 
-    .filter__tags-items_wrap {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      flex-grow: 1;
-
-      span {
-        margin-right: 10px;
-      }
-
-      .filter__tags-items {
-        flex-grow: 1;
-        height: 100%;
-        display: flex;
-        margin-left: 10px;
-        gap: 5px;
-      }
-    }
-
-    .filter__tags-add {
-
-      button {
-        height: 35px;
-        padding: 7px 16px 0 16px;
-      }
-    }
-
-    span {
-      margin-right: 10px;
-    }
-
-    .filter__tags-items {
-      height: 100%;
-      display: flex;
-      margin-left: 10px;
-      gap: 5px;
-
-      .filter__test {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        border: 1px solid var(--color-accents);
-        background-color: white;
-        padding: 5px 10px;
-      }
+    input {
+      width: 100%;
     }
   }
 

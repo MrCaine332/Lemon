@@ -49,6 +49,7 @@ export interface ISlider {
     leftButtonRef?: React.RefObject<HTMLDivElement>
     rightButtonRef?: React.RefObject<HTMLDivElement>
     children: React.ReactElement[]
+    withShadow?: boolean
 }
 
 

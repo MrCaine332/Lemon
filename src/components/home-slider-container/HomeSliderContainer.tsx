@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './HomeSliderContainer.scss'
 import {useAppSelector} from "../../hooks";
 import Slider from "../slider/Slider";
@@ -15,7 +15,7 @@ const HomeSliderContainer: React.FC = () => {
         {
             sliderRecipes.length &&
             <Slider height="500px" itemsToDisplay={1}>
-                { sliderRecipes.map((item, index) => (
+                { sliderRecipes?.map((item) => (
                     <>
                         <SliderHeroText sliderItem={item} />
                         <SliderHeroImage sliderItem={item} />

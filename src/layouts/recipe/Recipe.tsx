@@ -3,12 +3,12 @@ import "./Recipe.scss"
 import recipe1 from "../../resources/images/Recipe1.png"
 import recipe2 from "../../resources/images/Recipe2.png"
 import recipe3 from "../../resources/images/Recipe3.png"
-import RecipeSlider from "../../components/recipe-slider/RecipeSlider";
 import RecipeInfo from "../../components/recipe-info/RecipeInfo";
 import BlockTitle from "../../templates/block-title/BlockTitle";
 import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {getRecipeById} from "../../app/services/recipes-services";
+import Slider from "../../components/slider/Slider";
 
 const images: string[] = [recipe1, recipe2, recipe3]
 
@@ -29,7 +29,13 @@ const Recipe: React.FC = () => {
         <div className="page">
             <div className="recipe">
                 <div className="shadow-wide section recipe__main">
-                    <RecipeSlider images={images} />
+                    <div className="recipe_slider__wrap">
+                        <Slider height={'500px'} withShadow={false}>
+                            { images.map((image) =>
+                                <img key={image} src={image} alt="" />
+                            )}
+                        </Slider>
+                    </div>
                     { recipe && <RecipeInfo recipe={recipe} /> }
                 </div>
                 <div className="shadow-wide section padding_single-col recipe__utility">

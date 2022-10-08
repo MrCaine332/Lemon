@@ -24,14 +24,19 @@
 
 */
 
-import React, {useEffect, useRef, useState} from "react"
+import React, { useRef } from "react"
 import "./Slider.scss"
 import SliderMovable from "./slider-movable/SliderMovable";
 import {useAppSelector} from "../../hooks";
 import {ISlider} from "../../types/components";
 
 
-const Slider: React.FC<ISlider> = ({itemsToDisplay = 1, height, children}) => {
+const Slider: React.FC<ISlider> = ({
+    itemsToDisplay = 1,
+    height,
+    children,
+    withShadow = true
+}) => {
 
     const styleState = useAppSelector(state => state.style)
 
@@ -39,7 +44,7 @@ const Slider: React.FC<ISlider> = ({itemsToDisplay = 1, height, children}) => {
     const rightButtonRef = useRef(null)
 
     return (
-        <div className="slider section shadow-wide"
+        <div className={`slider section ${withShadow && 'shadow-wide'}`}
              style={styleState.windowWidth > 768 && height ? {height: height} : {}}>
             <SliderMovable
                 itemsToDisplay={itemsToDisplay}
