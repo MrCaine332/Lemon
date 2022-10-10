@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./AppButton.scss"
 
 export interface IAppButton {
-    type: string
+    type: 'button' | 'link'
     name?: string
     onClick?: () => void
     to?: string

@@ -17,7 +17,7 @@ const forms: IForms = {
         {type: "password", placeholder: "password", credentialType: "password"}
     ],
     REGISTRATION: [
-        {type: "text", placeholder: "email", credentialType: "email"},
+        {type: "email", placeholder: "email", credentialType: "email"},
         {type: "text", placeholder: "username", credentialType: "username"},
         {type: "password", placeholder: "password", credentialType: "password"},
         {type: "password", placeholder: "confirm password", credentialType: "confirmedPassword"}
