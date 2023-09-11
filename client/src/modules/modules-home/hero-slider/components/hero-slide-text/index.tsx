@@ -1,0 +1,1 @@
+export { HeroSlideText } from './HeroSlideText'

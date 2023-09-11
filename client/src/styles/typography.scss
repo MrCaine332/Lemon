@@ -1,0 +1,43 @@
+@mixin textJosefinSans($font-weight, $font-size, $line-height) {
+  font-family: 'JosefinSans', sans-serif;
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin textPlayfairDisplay($font-weight, $font-size, $line-height) {
+  font-family: 'PlayfairDisplay', sans-serif;
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+.textButton {
+  @include textJosefinSans(400, 12pt, 1);
+}
+
+.textBody {
+  @include textJosefinSans(400, 12pt, 1.4);
+}
+
+.textHeader1 {
+  @include textPlayfairDisplay(900, 24pt, 1.4);
+  letter-spacing: 0.02em;
+}
+
+.textHeader2 {
+  @include textPlayfairDisplay(500, 16pt, 1.4);
+  letter-spacing: 0.02em;
+}
+
+.textHeader3 {
+  @include textJosefinSans(400, 14pt, 1.4);
+  font-style: italic;
+}
+
+.textHeader4 {
+  @include textJosefinSans(700, 16pt, 1.4);
+}
+

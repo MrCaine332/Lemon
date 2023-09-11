@@ -1,0 +1,60 @@
+.createRecipePage {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .createRecipeTitle {
+    margin: 0;
+  }
+
+  &_twoCol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 580px;
+    gap: 40px;
+
+    @media screen and (max-width: 850px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+    }
+  }
+
+  .createRecipeFinalize {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    .createRecipeFinalizeCaption {
+      font-size: 10pt;
+      font-style: italic;
+    }
+
+    .termsOfUseButton {
+      font-size: 10pt;
+      font-style: italic;
+      color: var(--secondary-skyblue);
+
+      &:after {
+        background-color: var(--secondary-skyblue);
+      }
+    }
+
+    .publishRecipeButton {
+      min-width: max-content;
+    }
+
+    .createRecipeDefaultError {
+      text-align: center;
+      color: tomato;
+      font-size: 10pt;
+    }
+
+    @media screen and (max-width: 610px) {
+      text-align: center;
+      flex-direction: column;
+    }
+  }
+
+
+}

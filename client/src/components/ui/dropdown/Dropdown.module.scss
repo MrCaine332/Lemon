@@ -1,0 +1,25 @@
+.dropdownWrap {
+  position: relative;
+
+  .dropdown {
+    display: none;
+    width: auto;
+    height: auto;
+
+    padding: 15px 25px;
+    max-height: calc(100vh - 110px);
+
+    background-color: var(--color-section);
+    box-shadow: var(--shadow-wide);
+
+    position: absolute;
+    right: 0;
+    top: 60px;
+    overflow: auto;
+    transition: 0.15s;
+
+    &_show {
+      display: block;
+    }
+  }
+}

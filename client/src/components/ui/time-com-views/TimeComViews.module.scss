@@ -1,0 +1,26 @@
+.tcv {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-neutral);
+
+  .tcvGroup {
+    padding-top: 1px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    svg {
+      fill: var(--color-text-neutral);
+    }
+
+    p {
+      padding-top: 2px;
+    }
+  }
+
+  .tcvDivider {
+    width: 2px;
+    height: 20px;
+  }
+}

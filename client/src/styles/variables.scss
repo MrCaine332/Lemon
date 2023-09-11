@@ -1,0 +1,35 @@
+%colors {
+  --neutral-1: #2D2D2D;
+  --neutral-2: #2F2F2F;
+  --neutral-3: #3D3D3D;
+  --neutral-4: #555555;
+  --neutral-5: #7D7D7D;
+  --neutral-6: #C2C2C2;
+  --neutral-7: #EAEAEA;
+  --neutral-8: #F8F8F8;
+
+  --primary-yellow: #ffcc00;
+
+  --secondary-skyblue: #758de9;
+  --secondary-aqua: #055555;
+  --secondary-rose: #911026;
+  --secondary-salad: #87d0c5;
+}
+
+%variables {
+  --color-background: var(--neutral-7);
+  --color-section: var(--neutral-8);
+  --color-footer: var(--neutral-2);
+
+  --color-accent: var(--neutral-6);
+  --color-text-primary: var(--neutral-3);
+  --color-text-secondary: var(--neutral-1);
+  --color-text-neutral: var(--neutral-4);
+  --color-text-footer: var(--neutral-5);
+  --color-text-light: var(--neutral-7);
+
+  --shadow-narrow: 0 0 2px 1px rgba(0, 0, 0, .15);
+  --shadow-wide: 0 0 4px 2px rgba(0, 0, 0, .15);
+  --shadow-input-inset: 1px 0 3px 0px rgba(0, 0, 0, .35) inset;
+  --shadow-input-error-inset: 0 0 3px 0px red inset;
+}

@@ -1,0 +1,14 @@
+.checkboxWrapper {
+  display: flex;
+  gap: 4px;
+  color: var(--color-text-primary);
+
+  .checkbox {
+
+  }
+
+  .checkboxLabel {
+    font-size: 10pt;
+    font-style: italic;
+  }
+}
