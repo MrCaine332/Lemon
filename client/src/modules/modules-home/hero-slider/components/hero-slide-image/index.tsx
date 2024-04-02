@@ -1,1 +1,0 @@
-export { HeroSlideImage } from './HeroSlideImage'

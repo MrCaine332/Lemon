@@ -3,9 +3,10 @@
   background-color: var(--color-text-primary);
   width: 30px;
   height: 3px;
-  transition: transform 75ms cubic-bezier(.55,.055,.675,.19);
+  transition: transform 75ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
-  &:before, &:after {
+  &:before,
+  &:after {
     left: 0;
     position: absolute;
     content: "";
@@ -14,25 +15,33 @@
     background-color: inherit;
   }
   &:before {
-    transition: top 75ms ease 0.12s, opacity 75ms ease 0s;
+    transition:
+      top 75ms ease 0.12s,
+      opacity 75ms ease 0s;
     top: -10px;
   }
-  &:after  {
-    transition: bottom 75ms ease .12s,transform 75ms cubic-bezier(.55,.055,.675,.19) 0s;
+  &:after {
+    transition:
+      bottom 75ms ease 0.12s,
+      transform 75ms cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s;
     bottom: -10px;
   }
 }
 
 .hamburger_active {
   transform: rotate(45deg);
-  transition: transform 75ms cubic-bezier(.215,.61,.355,1) 0.12s;
+  transition: transform 75ms cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
   &:before {
-    transition: top 75ms ease 0s, opacity 75ms ease 0.12s;
+    transition:
+      top 75ms ease 0s,
+      opacity 75ms ease 0.12s;
     top: 0;
     opacity: 0;
   }
   &:after {
-    transition: bottom 75ms ease 0s,transform 75ms cubic-bezier(.215,.61,.355,1) 0.12s;
+    transition:
+      bottom 75ms ease 0s,
+      transform 75ms cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
     bottom: 0;
     transform: rotate(-90deg);
   }

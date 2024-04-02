@@ -1,0 +1,38 @@
+.carouselContext {
+  position: relative;
+}
+
+.carouselContentWrapper {
+  overflow: hidden;
+}
+
+.carouselContent {
+  display: flex;
+}
+
+.carouselItem {
+  min-width: 0;
+  flex-shrink: 0;
+  flex-grow: 1;
+  flex-basis: 100%;
+}
+
+.carouselPrevious {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  border-radius: 50px;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carouselNext {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  border-radius: 50px;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}

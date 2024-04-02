@@ -14,7 +14,7 @@ class TopicService {
 		return topics
 	}
 
-	async updated() {
+	async update() {
 
 	}
 

@@ -1,1 +1,1 @@
-export { TimeComViews } from './TimeComViews'
+export { TimeComViews } from "./TimeComViews"

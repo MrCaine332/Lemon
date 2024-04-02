@@ -1,30 +1,27 @@
-import React from 'react';
-import {useAppDispatch} from "@app/hooks/store";
-import {useQuery} from "@tanstack/react-query";
-import {authActions} from "@app/store/slices/auth-slice";
-import {refresh} from "@app/http/user-api-calls";
+import React, { useLayoutEffect } from "react"
+import { authActions } from "@app/store/slices/auth-slice"
+import { refresh } from "@app/http/user-api"
+import { useAppDispatch } from "@app/store/store"
 
 export type AuthProviderProps = {
-	children: React.ReactNode
+  children: React.ReactNode
 }
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
-	const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch()
 
-	useQuery({
-		queryKey: ["refresh"],
-		retry: 0,
-		queryFn: () => refresh(),
-		onSuccess: ({ data }) => {
-			localStorage.setItem('user-token', data.accessToken)
-			dispatch(authActions.refresh(data.user))
-		},
-		onError: () => {
-			dispatch(authActions.setStatus("READY"))
-		}
-	})
+  useLayoutEffect(() => {
+    refresh()
+      .then((response) => {
+        localStorage.setItem("user-token", response.data.accessToken)
+        dispatch(authActions.refresh(response.data.user))
+      })
+      .catch(() => {
+        dispatch(authActions.setStatus("READY"))
+      })
+  }, [])
 
-	return (<>{children}</>);
-};
+  return <>{children}</>
+}
 
-export default AuthProvider;
+export default AuthProvider

@@ -1,61 +1,32 @@
-// import React, {useEffect} from 'react';
-// import "./Recipe.scss"
-// import recipe1 from "../../resources/images/Recipe1.png"
-// import recipe2 from "../../resources/images/Recipe2.png"
-// import recipe3 from "../../resources/images/Recipe3.png"
-// import RecipeInfo from "../../components/recipe-info/RecipeInfo";
-// import {useNavigate, useParams} from "react-router-dom";
-// import {useAppDispatch, useAppSelector} from "@app/hooks/store";
-// import {getRecipeById} from "@app/store/thunks/recipes-services";
-// import {BlockTitle} from "@components/ui/block-title";
-//
-// const images: string[] = [recipe1, recipe2, recipe3]
-//
-// const Recipe: React.FC = () => {
-//     const id = useParams().id
-//     const navigate = useNavigate()
-//     const recipe = useAppSelector(state => state.recipes).pageRecipe
-//     const dispatch = useAppDispatch()
-//
-//     console.log(id)
-//     if (id === 'create') {
-//         navigate('/home')
-//     }
-//
-//     useEffect(() => {
-//         if (id) {
-//             const recipeId = Number(id)
-//             dispatch(getRecipeById(recipeId))
-//         }
-//     }, [dispatch, id])
-//
-//     return (
-//         <div className="page">
-//             <div className="recipe">
-//                 <div className="shadow-wide section recipe__main">
-//                     <div className="recipe_slider__wrap">
-//                         <Slider height={'500px'} withShadow={false}>
-//                             { images.map((image) =>
-//                                 <img key={image} src={image} alt="" />
-//                             )}
-//                         </Slider>
-//                     </div>
-//                     { recipe && <RecipeInfo recipe={recipe} /> }
-//                 </div>
-//                 <div className="shadow-wide section padding_single-col recipe__utility">
-//                     <div className="recipe__tags">
-//                         <BlockTitle title={"Tags"} />
-//                         <p>
-//                             #YUMMY #SWEET #DINNER #LUNCH #BREAKFAST #FRESH #TASTY #DELISH #DELICIOUS #EATING #FOOD
-//                         </p>
-//                      </div>
-//                     <div className="recipe__target">
-//                         <BlockTitle title={"Target"} />
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-//
-// export default Recipe;
+import React from "react"
+import styles from "./Recipe.module.scss"
+import { useParams } from "react-router-dom"
+import { useGetRecipeByIdQuery } from "@app/http/recipe-api"
+import { RecipeDescription } from "@modules/recipe/description/RecipeDescription"
+import { RecipeSteps } from "@modules/recipe/steps"
+import { RecipeIngredients } from "@modules/recipe/ingredients"
+import { Helmet } from "react-helmet"
+
+export const Recipe = () => {
+  const id = useParams().id
+
+  const { data: recipe, isLoading } = useGetRecipeByIdQuery(Number(id), {
+    refetchOnMountOrArgChange: true,
+  })
+
+  return (
+    <>
+      <Helmet>
+        <meta name="description" content={recipe?.description.substring(0, 200)} />
+        <title>{ recipe?.title || "Recipe" }</title>
+      </Helmet>
+      <div className={"page " + styles.recipe}>
+        <RecipeDescription recipe={recipe} />
+        <div className={styles.recipe_twoCol}>
+          <RecipeIngredients recipe={recipe} />
+          <RecipeSteps recipe={recipe} />
+        </div>
+      </div>
+    </>
+  )
+}

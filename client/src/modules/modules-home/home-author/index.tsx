@@ -1,1 +1,0 @@
-export { HomeAuthor } from './HomeAuthor'

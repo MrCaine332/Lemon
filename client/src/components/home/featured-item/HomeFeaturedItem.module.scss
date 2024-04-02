@@ -1,0 +1,48 @@
+.homeFeaturedItemWrapper {
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+
+.homeFeaturedItem {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  gap: 8px;
+
+  .homeFeaturedItemImage {
+    width: 30%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .homeFeatureItemInfo {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .homeFeaturedItemTitle {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+
+    .homeFeaturedItemDescription {
+      height: 44px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+}

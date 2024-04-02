@@ -1,0 +1,31 @@
+.recipeSteps {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+
+  .recipeStepsTitle {
+    padding: 24px 36px 0;
+  }
+
+  .recipeStepsBody {
+    padding: 0 36px 24px;
+    flex-grow: 1;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 16px;
+
+    .recipeIngredientsItem {
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      .itemDivider {
+        height: 28px;
+        width: 2px;
+      }
+    }
+  }
+}

@@ -1,1 +1,0 @@
-export { HomeFeaturedItem } from './HomeFeaturedItem'

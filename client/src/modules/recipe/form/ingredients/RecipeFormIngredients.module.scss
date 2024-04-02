@@ -1,0 +1,72 @@
+.recipeFormIngredients {
+  display: flex;
+  flex-direction: column;
+
+  .recipeFormIngredientsTitle {
+    padding: 24px 36px 0;
+  }
+
+  .recipeFormIngredientsError {
+    text-align: center;
+    color: tomato;
+    margin-top: 8px;
+    margin-bottom: -10px;
+    font-size: 12pt;
+  }
+
+  .recipeFormIngredientsBody {
+    padding: 0 36px 24px;
+    flex-grow: 1;
+    overflow: auto;
+
+    .recipeFormIngredientsGuide {
+      margin: 20px 0;
+    }
+
+    .recipeFormIngredientsList {
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .ingredientInputsGroup {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+        justify-content: center;
+
+        .ingredientNameWrapper {
+          flex-basis: 15%;
+          flex-grow: 1;
+        }
+
+        .ingredientUtils {
+          display: flex;
+          flex-basis: 0;
+          flex-grow: 1;
+          gap: 8px;
+
+          .ingredientAmountWrapper {
+            flex-grow: 1;
+          }
+        }
+      }
+
+      .removeIngredientButton {
+        height: 36px;
+        width: 36px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        fill: var(--color-text-neutral);
+      }
+    }
+
+    .addIngredientButton {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+
+  .paginationPageLink {
+    height: 28px;
+    width: 28px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .paginationActiveLink {
+    &:after {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 4px;
+      background-color: var(--color-text-primary);
+    }
+  }
+
+  .paginationArrow {
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    margin: 0 8px;
+  }
+}

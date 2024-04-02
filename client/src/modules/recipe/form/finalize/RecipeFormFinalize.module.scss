@@ -1,0 +1,41 @@
+.recipeFormFinalize {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  .recipeFormFinalizeCaption {
+    font-size: 10pt;
+    font-style: italic;
+  }
+
+  .termsOfUseButton {
+    font-size: 10pt;
+    font-style: italic;
+    color: var(--secondary-skyblue);
+
+    &:after {
+      background-color: var(--secondary-skyblue);
+    }
+  }
+
+  .recipeFormFinalizeButtonGroup {
+    display: flex;
+    gap: 8px;
+  }
+
+  .publishRecipeButton {
+    min-width: max-content;
+  }
+
+  .recipeFormDefaultError {
+    text-align: center;
+    color: tomato;
+    font-size: 10pt;
+  }
+
+  @media screen and (max-width: 610px) {
+    text-align: center;
+    flex-direction: column;
+  }
+}

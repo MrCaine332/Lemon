@@ -64,30 +64,6 @@ class UserController {
         }
     }
 
-    async activate(req: Request, res: Response, next: NextFunction) {
-        try {
-            const activationLink = req.params.link
-            await userService.activate(activationLink)
-            return res.redirect("http://localhost:3000/home")
-        } catch (e) {
-            return next(e)
-        }
-    }
-
-
-    async resendActivationMail(req: Request, res: Response, next: NextFunction) {
-        try {
-            const { email } = req.body
-            await userService.resendActivationMail(email)
-            return res.sendStatus(200)
-        } catch (e) {
-            console.log(e)
-            return next(e)
-        }
-    }
-
-
-
     async getUsers(req: Request, res: Response, next: NextFunction) {
         try {
             const users = await AppDataSource.getRepository(User).find()

@@ -17,23 +17,23 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 0;
     height: 2px;
-    opacity: 0;
+    opacity: 0.3;
     background-color: var(--color-text-primary);
-    transition: 0.1s;
+    transition: 0.3s;
   }
 
   &:hover {
     &:after {
       opacity: 1;
+      width: 100%;
     }
   }
 
   &:active {
     transform: scale(1.05);
   }
-
 }
 
 .button_outlined {

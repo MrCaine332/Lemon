@@ -1,9 +1,9 @@
 export type Step = {
-	stepName: string
-	stepDescription: string
+  stepName: string
+  stepDescription: string
 }
 
 export type Ingredient = {
-	ingredientName: string
-	ingredientAmount: string
+  ingredientName: string
+  ingredientAmount: string
 }

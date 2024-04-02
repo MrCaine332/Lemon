@@ -1,0 +1,19 @@
+.recipesFilters {
+  display: flex;
+  gap: 24px;
+
+  .recipesFilterItem {
+    width: 100%;
+
+    .recipesFiltersSelectButton {
+      height: 36px;
+    }
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .recipesFilters {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

@@ -1,1 +1,0 @@
-export { RecipeItem } from './RecipeItem'

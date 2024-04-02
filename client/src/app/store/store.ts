@@ -1,14 +1,16 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit"
 import authReducer from "./slices/auth-slice"
-import homeReducer from "./slices/home-slice"
-import recipesReducer from "./slices/recipes-slice"
+import { api } from "@app/http/index"
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux"
 
 const store = configureStore({
-    reducer: {
-        auth: authReducer,
-        home: homeReducer,
-        recipes: recipesReducer,
-    }
+  reducer: {
+    [api.reducerPath]: api.reducer,
+
+    auth: authReducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(api.middleware),
 })
 
 /** TODO: Remove global window.store */
@@ -19,3 +21,6 @@ export default store
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
+
+export const useAppDispatch: () => AppDispatch = useDispatch
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector

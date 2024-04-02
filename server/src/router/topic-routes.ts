@@ -11,7 +11,7 @@ router.post("/",
 	authMiddleware([Roles.admin]),
 	topicController.create)
 
-router.get("/", authMiddleware([Roles.admin]), topicController.get)
+router.get("/", topicController.get)
 
 router.put("/:id", authMiddleware([Roles.admin]), topicController.update)
 

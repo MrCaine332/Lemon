@@ -1,5 +1,5 @@
 @mixin textJosefinSans($font-weight, $font-size, $line-height) {
-  font-family: 'JosefinSans', sans-serif;
+  font-family: "JosefinSans", sans-serif;
   font-style: normal;
   font-weight: $font-weight;
   font-size: $font-size;
@@ -7,7 +7,7 @@
 }
 
 @mixin textPlayfairDisplay($font-weight, $font-size, $line-height) {
-  font-family: 'PlayfairDisplay', sans-serif;
+  font-family: "PlayfairDisplay", sans-serif;
   font-style: normal;
   font-weight: $font-weight;
   font-size: $font-size;
@@ -40,4 +40,3 @@
 .textHeader4 {
   @include textJosefinSans(700, 16pt, 1.4);
 }
-

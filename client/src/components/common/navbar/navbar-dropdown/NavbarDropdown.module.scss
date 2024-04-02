@@ -1,0 +1,24 @@
+.navbarDropdownWrap {
+  position: absolute;
+  transition: 0.3s;
+  padding-top: 10px;
+}
+
+.navbarDropdownContent {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 6px 0 rgba(130, 130, 130, 0.15);
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .navbarDropdownItem * {
+    color: rgb(180, 180, 180);
+    font-size: 12pt;
+
+    &:hover {
+      color: var(--color-text);
+    }
+  }
+}

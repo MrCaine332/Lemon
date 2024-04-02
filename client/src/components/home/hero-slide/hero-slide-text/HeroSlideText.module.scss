@@ -1,0 +1,39 @@
+.heroSlideText {
+  padding: 24px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media screen and (max-width: 400px) {
+    padding: 12px 24px;
+  }
+
+  .titlePopular {
+    font-size: 24pt;
+    color: var(--secondary-rose);
+  }
+
+  .heroSlideInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+    overflow: hidden;
+
+    .heroSlideInfo_title {
+      color: var(--secondary-aqua);
+    }
+
+    .heroSlideInfo_details {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .heroSlideFooter {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: auto;
+  }
+}

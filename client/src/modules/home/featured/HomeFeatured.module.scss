@@ -1,0 +1,26 @@
+.homeFeaturedWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.homeFeatured {
+  margin-top: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .homeFeaturedList {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .homeFeaturedMoreBtn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

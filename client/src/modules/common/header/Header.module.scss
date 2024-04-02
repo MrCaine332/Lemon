@@ -1,0 +1,41 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  width: 100%;
+  max-height: 120px;
+  height: 120px;
+
+  transition: 0.2s ease-in-out;
+
+  .headerSection {
+    padding: 0 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    .headerDropdowns {
+      display: flex;
+      gap: 16px;
+    }
+  }
+}
+
+.headerSmall {
+  max-height: 80px;
+}
+
+@media screen and (max-width: 900px) {
+  .header .headerSection {
+    padding: 0 36px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .header .headerSection {
+    padding: 0 20px;
+  }
+}
